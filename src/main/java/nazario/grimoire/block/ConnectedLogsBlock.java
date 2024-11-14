@@ -60,7 +60,7 @@ public class ConnectedLogsBlock extends Block implements Waterloggable {
         for(int i = 0;i<PROPERTIES.length;i++) {
             Direction dir = getDirectionFromIndex(i);
             BlockPos offsetPos = new BlockPos(pos).offset(dir, 1);
-            if(world.getBlockState(offsetPos).getBlock() instanceof ConnectedLogsBlock || world.getBlockState(offsetPos).isSideSolid(world, offsetPos, getDirectionFromIndex(i), SideShapeType.FULL)) {
+            if(world.getBlockState(offsetPos).getBlock() instanceof ConnectedLogsBlock || world.getBlockState(offsetPos).isSideSolid(world, offsetPos, getDirectionFromIndex(i).getOpposite(), SideShapeType.FULL)) {
                 state = state.with(PROPERTIES[i], true);
             } else {
                 state = state.with(PROPERTIES[i], false);
@@ -110,7 +110,7 @@ public class ConnectedLogsBlock extends Block implements Waterloggable {
         for(int i = 0;i<PROPERTIES.length;i++) {
             Direction dir = getDirectionFromIndex(i);
             BlockPos offsetPos = new BlockPos(ctx.getBlockPos()).offset(dir, 1);
-            if(worldAccess.getBlockState(offsetPos).getBlock() instanceof ConnectedLogsBlock || worldAccess.getBlockState(offsetPos).isSideSolid(worldAccess, offsetPos, getDirectionFromIndex(i), SideShapeType.FULL)) {
+            if(worldAccess.getBlockState(offsetPos).getBlock() instanceof ConnectedLogsBlock || worldAccess.getBlockState(offsetPos).isSideSolid(worldAccess, offsetPos, getDirectionFromIndex(i).getOpposite(), SideShapeType.FULL)) {
                 state = state.with(PROPERTIES[i], true);
             } else {
                 state = state.with(PROPERTIES[i], false);
