@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iIi",
+    "CTC",
+    "C C"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "I": {
+      "item": "minecraft:iron_trapdoor"
+    },
+    "C": {
+      "item": "minecraft:iron_nugget"
+    },
+    "T": {
+      "item": "minecraft:chain"
+    }
+  },
+  "result": {
+    "item": "grimoire:iron_scaffolding",
+    "count": 8
+  }
+}

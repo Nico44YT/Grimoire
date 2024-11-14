@@ -1,0 +1,7 @@
+{
+  "parent": "grimoire:block/template/template_connected_log_core",
+  "textures": {
+    "0": "minecraft:block/warped_stem",
+    "particle": "minecraft:block/warped_stem"
+  }
+}

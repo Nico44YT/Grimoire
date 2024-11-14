@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:jungle_log"
+    }
+  },
+  "result": {
+    "item": "grimoire:jungle_connected_log",
+    "count": 8
+  }
+}

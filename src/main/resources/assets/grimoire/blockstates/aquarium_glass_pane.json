@@ -1,0 +1,56 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "grimoire:block/aquarium_glass_pane",
+        "y": 270
+      },
+      "when": {
+        "east_filled": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "grimoire:block/aquarium_glass_pane",
+        "y": 180
+      },
+      "when": {
+        "north_filled": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "grimoire:block/aquarium_glass_pane",
+        "y": 0
+      },
+      "when": {
+        "south_filled": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "grimoire:block/aquarium_glass_pane",
+        "y": 90
+      },
+      "when": {
+        "west_filled": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "grimoire:block/aquarium_glass_pane_top"
+      },
+      "when": {
+        "up_filled": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "grimoire:block/aquarium_glass_pane_bottom"
+      },
+      "when": {
+        "bottom_filled": "true"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "itemGroup.grimoire.grimoire_tab": "Grimoire",
+
+  "enchantment.grimoire.deathbound": "Deathbound",
+  "enchantment.grimoire.deathbound.desc": "Has a chance to nullify the effect of a totem of undying.",
+
+  "enchantment.grimoire.shared_blood": "Shared Blood",
+  "enchantment.grimoire.shared_blood.desc": "When striking an opponent, there is a 50% chance to absorb one of their active effects, either beneficial or harmful, for a brief duration.",
+
+  "enchantment.grimoire.brute_force": "Brute Force",
+  "enchantment.grimoire.brute_force.desc": "Will make the weapon of the opponent unusable for a short amount of time.",
+
+  "enchantment.grimoire.golem_shroud": "Golem Shroud",
+  "enchantment.grimoire.golem_shroud.desc": "Offers protection from all damage, but reduces your movement speed",
+
+  "block.grimoire.aquarium_glass_pane": "Aquarium Glass Pane",
+  "block.grimoire.moss_carpet_vines": "Moss Carpet Vines",
+  "block.grimoire.iron_scaffolding": "Iron Scaffolding",
+
+  "item.grimoire.angelic_spear": "Angelic Spear",
+
+  "block.grimoire.acacia_connected_log": "Acacia Connected Log",
+  "block.grimoire.birch_connected_log": "Birch Connected Log",
+  "block.grimoire.crimson_connected_log": "Crimson Connected Log",
+  "block.grimoire.dark_oak_connected_log": "Dark Oak Connected Log",
+  "block.grimoire.jungle_connected_log": "Jungle Connected Log",
+  "block.grimoire.mangrove_connected_log": "Mangrove Connected Log",
+  "block.grimoire.oak_connected_log": "Oak Connected Log",
+  "block.grimoire.warped_connected_log": "Warped Connected Log"
+}

@@ -1,0 +1,4 @@
+accessWidener v2 named
+
+accessible class net/minecraft/client/render/item/HeldItemRenderer$HandRenderType
+accessible method net/minecraft/entity/Entity getJumpVelocityMultiplier ()F

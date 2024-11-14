@@ -1,0 +1,7 @@
+{
+  "parent": "grimoire:block/template/template_connected_log_side",
+  "textures": {
+    "0": "minecraft:block/mangrove_log",
+    "particle": "minecraft:block/mangrove_log"
+  }
+}

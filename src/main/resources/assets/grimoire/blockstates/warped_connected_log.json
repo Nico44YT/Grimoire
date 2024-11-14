@@ -1,0 +1,61 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "grimoire:block/connected_logs/warped_connected_log_core"
+      }
+    },
+    {
+      "apply": {
+        "model": "grimoire:block/connected_logs/warped_connected_log_side",
+        "y": 180
+      },
+      "when": {
+        "east_present": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "grimoire:block/connected_logs/warped_connected_log_side",
+        "y": 90
+      },
+      "when": {
+        "north_present": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "grimoire:block/connected_logs/warped_connected_log_side",
+        "y": 270
+      },
+      "when": {
+        "south_present": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "grimoire:block/connected_logs/warped_connected_log_side",
+        "y": 0
+      },
+      "when": {
+        "west_present": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "grimoire:block/connected_logs/warped_connected_log_top"
+      },
+      "when": {
+        "top_present": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "grimoire:block/connected_logs/warped_connected_log_bottom"
+      },
+      "when": {
+        "bottom_present": "true"
+      }
+    }
+  ]
+}

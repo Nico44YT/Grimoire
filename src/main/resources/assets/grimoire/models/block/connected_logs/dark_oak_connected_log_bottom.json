@@ -1,0 +1,7 @@
+{
+  "parent": "grimoire:block/template/template_connected_log_bottom",
+  "textures": {
+    "0": "minecraft:block/dark_oak_log",
+    "particle": "minecraft:block/dark_oak_log"
+  }
+}

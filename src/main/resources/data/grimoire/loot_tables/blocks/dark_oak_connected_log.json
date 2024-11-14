@@ -1,0 +1,13 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "grimoire:dark_oak_connected_log"
+        }
+      ]
+    }
+  ]
+}
