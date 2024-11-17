@@ -2,3 +2,5 @@ accessWidener v2 named
 
 accessible class net/minecraft/client/render/item/HeldItemRenderer$HandRenderType
 accessible method net/minecraft/entity/Entity getJumpVelocityMultiplier ()F
+accessible method net/minecraft/block/Block setDefaultState (Lnet/minecraft/block/BlockState;)V
+accessible field net/minecraft/client/render/block/BlockRenderManager blockModelRenderer Lnet/minecraft/client/render/block/BlockModelRenderer;

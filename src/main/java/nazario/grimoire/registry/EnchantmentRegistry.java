@@ -1,10 +1,10 @@
 package nazario.grimoire.registry;
 
 import nazario.grimoire.Grimoire;
-import nazario.grimoire.enchantments.BruteForceEnchantment;
-import nazario.grimoire.enchantments.EffectStealingEnchantment;
-import nazario.grimoire.enchantments.GolemShroudEnchantment;
-import nazario.grimoire.enchantments.TotemDenialEnchantment;
+import nazario.grimoire.common.enchantments.BruteForceEnchantment;
+import nazario.grimoire.common.enchantments.EffectStealingEnchantment;
+import nazario.grimoire.common.enchantments.GolemShroudEnchantment;
+import nazario.grimoire.common.enchantments.TotemDenialEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.registry.Registry;
 

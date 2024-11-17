@@ -1,4 +1,4 @@
-package nazario.grimoire.block;
+package nazario.grimoire.common.block;
 
 import nazario.grimoire.registry.BlockRegistry;
 import net.minecraft.block.*;

@@ -27,10 +27,10 @@ public abstract class HeldItemFeatureRendererMixin<T extends LivingEntity, M ext
     }
 
 
-    @Inject(method = "renderItem", at = @At("HEAD"), cancellable = true)
-    private void grimoire$twoHanded(LivingEntity entity, ItemStack stack, ModelTransformation.Mode transformationMode, Arm arm, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
-        if (entity.getMainHandStack().isOf(ItemRegistry.ANGELIC_SPEAR) && entity.getMainArm() != arm) {
-            matrices.scale(2, 2, 2);
-        }
-    }
+    //@Inject(method = "renderItem", at = @At("HEAD"), cancellable = true)
+    //private void grimoire$twoHanded(LivingEntity entity, ItemStack stack, ModelTransformation.Mode transformationMode, Arm arm, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
+    //    if (entity.getMainHandStack().isOf(ItemRegistry.ANGELIC_SPEAR) && entity.getMainArm() != arm) {
+    //        matrices.scale(2, 2, 2);
+    //    }
+    //}
 }

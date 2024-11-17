@@ -1,4 +1,4 @@
-package nazario.grimoire.enchantments;
+package nazario.grimoire.common.enchantments;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;

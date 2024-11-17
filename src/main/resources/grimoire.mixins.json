@@ -14,7 +14,11 @@
     "client.HeldItemFeatureRendererMixin",
     "client.BipedEntityModelMixin",
     "client.HeldItemRendererMixin",
-    "client.PlayerEntityRendererMixin"
+    "client.PlayerEntityRendererMixin",
+    "client.ItemRendererAccessor",
+    "client.ItemRendererMixin",
+    "client.ModelLoaderMixin",
+    "client.BlockRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

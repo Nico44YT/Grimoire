@@ -3,6 +3,7 @@ package nazario.grimoire;
 import nazario.grimoire.registry.BlockRegistry;
 import nazario.grimoire.registry.EnchantmentRegistry;
 import nazario.grimoire.registry.ItemRegistry;
+import nazario.grimoire.registry.ParticleRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.util.Identifier;
@@ -17,6 +18,8 @@ public class Grimoire implements ModInitializer {
 
         BlockRegistry.register();
         ItemRegistry.register();
+
+        ParticleRegistry.register();
 
         ServerLifecycleEvents.SERVER_STARTED.register(server -> {
             PersistentData.init(PersistentData.getServerState(server));

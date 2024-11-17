@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " gg",
+    " /g",
+    "/  "
+  ],
+  "key": {
+    "g": {
+      "item": "grimoire:angelic_metal_ingot"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "grimoire:angelic_spear",
+    "count": 1
+  }
+}

@@ -1,7 +1,7 @@
 package nazario.grimoire.registry;
 
 import nazario.grimoire.Grimoire;
-import nazario.grimoire.block.*;
+import nazario.grimoire.common.block.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -10,7 +10,7 @@ import net.minecraft.util.registry.Registry;
 
 public class BlockRegistry {
 
-    public static Block MOSS_CARPET_VINES = registerBlock("moss_carpet_vines", new MossCarpetBlock(AbstractBlock.Settings.copy(Blocks.MOSS_CARPET).noCollision().breakInstantly()), new FabricItemSettings().group(ItemRegistry.GRIMOIRE_ITEM_GROUP));
+    public static Block MOSS_CARPET_VINES = registerBlock("moss_carpet_vines", new MossCarpetBlock(AbstractBlock.Settings.copy(Blocks.MOSS_CARPET).noCollision().breakInstantly()));
     public static Block AQUARIUM_GLASS_PANE = registerBlock("aquarium_glass_pane", new AquariumGlassPaneBlock(AbstractBlock.Settings.copy(Blocks.GLASS)));
     public static Block IRON_SCAFFOLDING = registerBlock("iron_scaffolding", new IronScaffoldingBlock(AbstractBlock.Settings.of(Material.METAL, MapColor.IRON_GRAY).requiresTool().strength(3.0f, 2.0f).sounds(BlockSoundGroup.METAL)));
 
@@ -32,6 +32,11 @@ public class BlockRegistry {
                 Registry.ITEM,
                 Grimoire.id("iron_scaffolding"),
                 new IronScaffoldingBlockItem(new FabricItemSettings().group(ItemRegistry.GRIMOIRE_ITEM_GROUP)));
+        Registry.register(
+                Registry.ITEM,
+                Grimoire.id("moss_carpet_vines"),
+                new MossCarpetBlockItem(MOSS_CARPET_VINES, new FabricItemSettings().group(ItemRegistry.GRIMOIRE_ITEM_GROUP))
+        );
     };
 
     private static Block registerBlock(String name, Block block) {

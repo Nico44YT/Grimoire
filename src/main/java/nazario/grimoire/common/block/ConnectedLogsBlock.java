@@ -1,4 +1,4 @@
-package nazario.grimoire.block;
+package nazario.grimoire.common.block;
 
 import nazario.grimoire.util.LibyVoxelUtil;
 import net.minecraft.block.*;

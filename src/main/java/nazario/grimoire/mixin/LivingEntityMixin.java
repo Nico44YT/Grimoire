@@ -1,20 +1,19 @@
 package nazario.grimoire.mixin;
 
-import nazario.grimoire.enchantments.EffectStealingEnchantment;
+import nazario.grimoire.common.enchantments.EffectStealingEnchantment;
+import nazario.grimoire.common.item.AngelicSpearItem;
 import nazario.grimoire.registry.BlockRegistry;
 import nazario.grimoire.registry.EnchantmentRegistry;
-import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
-import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -26,6 +25,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
 public class LivingEntityMixin {
+
+    @Inject(method = "getOffHandStack", at = @At("HEAD"), cancellable = true)
+    public void getOffHandStack(CallbackInfoReturnable<ItemStack> cir) {
+        if((LivingEntity)(Object)this instanceof PlayerEntity player) {
+            if(player.getMainHandStack().getItem() instanceof AngelicSpearItem) cir.setReturnValue(new ItemStack(Items.AIR));
+        }
+    }
 
     @Inject(method = "applyClimbingSpeed", at = @At("TAIL"), cancellable = true)
     private void grimoire$applyClimbingSpeed(Vec3d motion, CallbackInfoReturnable<Vec3d> cir) {

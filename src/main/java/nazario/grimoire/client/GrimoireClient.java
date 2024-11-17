@@ -1,9 +1,15 @@
 package nazario.grimoire.client;
 
+import nazario.grimoire.Grimoire;
+import nazario.grimoire.common.particles.SpearPierceParticle;
 import nazario.grimoire.registry.BlockRegistry;
+import nazario.grimoire.registry.ParticleRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.screen.PlayerScreenHandler;
 
 public class GrimoireClient implements ClientModInitializer {
 
@@ -21,5 +27,12 @@ public class GrimoireClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.MANGROVE_CONNECTED_LOG_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.OAK_CONNECTED_LOG_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.WARPED_CONNECTED_LOG_BLOCK, RenderLayer.getCutout());
+
+
+        //ClientSpriteRegistryCallback.event(PlayerScreenHandler.BLOCK_ATLAS_TEXTURE).register((((spriteAtlasTexture, registry) -> {
+        //    registry.register(Grimoire.id("particle/spear_pierce"));
+        //})));
+
+        ParticleFactoryRegistry.getInstance().register(ParticleRegistry.SPEAR_PIERCE, SpearPierceParticle.Factory::new);
     }
 }

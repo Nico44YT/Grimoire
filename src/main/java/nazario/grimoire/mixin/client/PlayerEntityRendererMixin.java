@@ -17,7 +17,7 @@ public class PlayerEntityRendererMixin {
     private static void grimoire$getArmPose(AbstractClientPlayerEntity player, Hand hand, CallbackInfoReturnable<BipedEntityModel.ArmPose> cir) {
         ItemStack itemStack = player.getStackInHand(hand);
         if(itemStack.getItem().equals(ItemRegistry.ANGELIC_SPEAR)) {
-            cir.setReturnValue(BipedEntityModel.ArmPose.CROSSBOW_HOLD);
+            //cir.setReturnValue(BipedEntityModel.ArmPose.CROSSBOW_HOLD);
         }
     }
 }

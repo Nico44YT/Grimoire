@@ -4,7 +4,9 @@
   "version": "${version}",
   "name": "Grimoire",
   "description": "",
-  "authors": [],
+  "authors": [
+    "Nico_44"
+  ],
   "contact": {},
   "license": "GPL-3.0",
   "icon": "assets/grimoire/icon.png",

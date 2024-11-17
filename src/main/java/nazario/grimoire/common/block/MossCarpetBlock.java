@@ -1,7 +1,6 @@
-package nazario.grimoire.block;
+package nazario.grimoire.common.block;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.CarpetBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
