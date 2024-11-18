@@ -21,6 +21,7 @@ public class BlockRegistry {
     public static Block JUNGLE_CONNECTED_LOG_BLOCK = registerBlock("jungle_connected_log", new ConnectedLogsBlock(AbstractBlock.Settings.copy(Blocks.JUNGLE_PLANKS)), new FabricItemSettings().group(ItemRegistry.GRIMOIRE_ITEM_GROUP));
     public static Block MANGROVE_CONNECTED_LOG_BLOCK = registerBlock("mangrove_connected_log", new ConnectedLogsBlock(AbstractBlock.Settings.copy(Blocks.MANGROVE_PLANKS)), new FabricItemSettings().group(ItemRegistry.GRIMOIRE_ITEM_GROUP));
     public static Block OAK_CONNECTED_LOG_BLOCK = registerBlock("oak_connected_log", new ConnectedLogsBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)), new FabricItemSettings().group(ItemRegistry.GRIMOIRE_ITEM_GROUP));
+    public static Block SPRUCE_CONNECTED_LOG_BLOCK = registerBlock("spruce_connected_log", new ConnectedLogsBlock(AbstractBlock.Settings.copy(Blocks.SPRUCE_PLANKS)), new FabricItemSettings().group(ItemRegistry.GRIMOIRE_ITEM_GROUP));
     public static Block WARPED_CONNECTED_LOG_BLOCK = registerBlock("warped_connected_log", new ConnectedLogsBlock(AbstractBlock.Settings.copy(Blocks.WARPED_PLANKS)), new FabricItemSettings().group(ItemRegistry.GRIMOIRE_ITEM_GROUP));
 
     public static void register() {

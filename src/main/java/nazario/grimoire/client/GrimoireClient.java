@@ -26,6 +26,7 @@ public class GrimoireClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.JUNGLE_CONNECTED_LOG_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.MANGROVE_CONNECTED_LOG_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.OAK_CONNECTED_LOG_BLOCK, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.SPRUCE_CONNECTED_LOG_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.WARPED_CONNECTED_LOG_BLOCK, RenderLayer.getCutout());
 
 

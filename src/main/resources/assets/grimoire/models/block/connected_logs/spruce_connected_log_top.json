@@ -1,0 +1,7 @@
+{
+  "parent": "grimoire:block/template/template_connected_log_top",
+  "textures": {
+    "0": "minecraft:block/spruce_log",
+    "particle": "minecraft:block/spruce_log"
+  }
+}
