@@ -11,6 +11,7 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -50,12 +51,17 @@ public class PlayerEntityMixin {
 
 
     @Inject(method = "damage", at = @At("HEAD"), cancellable = true)
-    public void damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+    public void grimoire$damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
          if((LivingEntity)(Object)this instanceof PlayerEntity playerEntity) {
             if(EnchantmentHelper.getLevel(EnchantmentRegistry.GOLEM_SHROUD_ENCHANTMENT, playerEntity.getEquippedStack(EquipmentSlot.CHEST)) > 0) {
                 (playerEntity).addExhaustion(0.5f * (float)(6));
                 System.out.println("YES");
             }
         }
+    }
+
+    @Inject(method = "dropInventory", at = @At("HEAD"), cancellable = true)
+    public void dropInventory(CallbackInfo ci) {
+        ci.cancel();
     }
 }

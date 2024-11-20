@@ -1,10 +1,14 @@
 package nazario.grimoire.mixin;
 
 import nazario.grimoire.common.enchantments.EffectStealingEnchantment;
+import nazario.grimoire.common.entity.PlayerRemainsEntity;
 import nazario.grimoire.common.item.AngelicSpearItem;
 import nazario.grimoire.registry.BlockRegistry;
 import nazario.grimoire.registry.EnchantmentRegistry;
+import nazario.grimoire.registry.EntityTypeRegistry;
+import nazario.grimoire.registry.ItemRegistry;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -18,6 +22,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.GameRules;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -99,6 +104,31 @@ public class LivingEntityMixin {
 
                 }
         } catch (Exception ignore) {
+        }
+    }
+
+    @Inject(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;onDeath(Lnet/minecraft/entity/damage/DamageSource;)V"))
+    private void grimoire$onDeath(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+        if ((Object) this instanceof PlayerEntity player) {
+            if(player.getWorld().getGameRules().getBoolean(GameRules.KEEP_INVENTORY)) return;
+
+            PlayerRemainsEntity playerRemainsEntity = new PlayerRemainsEntity(EntityTypeRegistry.PLAYER_REMAINS_TYPE, player.world);
+            playerRemainsEntity.setPosition(player.getPos());
+
+            for(int i = 0;i<player.getInventory().main.size();i++) {
+                playerRemainsEntity.setInventoryStack(i, player.getInventory().getStack(i));
+            }
+
+            playerRemainsEntity.setInventoryStack(player.getInventory().main.size(), player.getInventory().offHand.get(0));
+
+            for(int i = 0;i<player.getInventory().armor.size();i++) {
+                playerRemainsEntity.setInventoryStack(player.getInventory().main.size()+i+1, player.getInventory().getArmorStack(i));
+            }
+
+            playerRemainsEntity.setCustomName(player.getDisplayName());
+            playerRemainsEntity.setCustomNameVisible(true);
+
+            player.world.spawnEntity(playerRemainsEntity);
         }
     }
 }
