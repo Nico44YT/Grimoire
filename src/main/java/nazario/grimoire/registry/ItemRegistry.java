@@ -19,7 +19,7 @@ public class ItemRegistry {
     public static final Item ANGELIC_METAL_SHARD = registerItem("angelic_metal_shard", new Item(new Item.Settings().group(GRIMOIRE_ITEM_GROUP)));
     public static final Item ANGELIC_METAL_INGOT = registerItem("angelic_metal_ingot", new Item(new Item.Settings().group(GRIMOIRE_ITEM_GROUP)));
 
-    public static final Item GLASS_ITEM_FRAME = registerItem("glass_item_frame", new ItemFrameItem(EntityTypeRegistry.GLASS_ITEM_FRAME, new Item.Settings()));
+    //public static final Item GLASS_ITEM_FRAME = registerItem("glass_item_frame", new ItemFrameItem(EntityTypeRegistry.GLASS_ITEM_FRAME, new Item.Settings()));
 
     public static void register() {
     }

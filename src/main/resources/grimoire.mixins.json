@@ -13,15 +13,11 @@
   ],
   "client": [
     "client.BipedEntityModelMixin",
-    "client.HeldItemFeatureRendererMixin",
     "client.HeldItemRendererMixin",
     "client.ItemFrameEntityRendererMixin",
     "client.ItemRendererAccessor",
     "client.ItemRendererMixin",
-    "client.ModelLoaderMixin",
-    "client.NoteParticleFactoryMixin",
-    "client.NoteParticleMixin",
-    "client.PlayerEntityRendererMixin"
+    "client.ModelLoaderMixin"
   ],
   "injectors": {
     "defaultRequire": 1

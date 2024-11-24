@@ -1,8 +1,5 @@
 package nazario.grimoire.mixin;
 
-import dev.emi.trinkets.api.Trinket;
-import dev.emi.trinkets.api.TrinketsApi;
-import nazario.grimoire.Grimoire;
 import nazario.grimoire.common.enchantments.EffectStealingEnchantment;
 import nazario.grimoire.common.entity.remains.PlayerRemainsEntity;
 import nazario.grimoire.common.item.TwoHanded;

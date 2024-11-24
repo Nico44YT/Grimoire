@@ -10,12 +10,15 @@ import nazario.grimoire.registry.EntityTypeRegistry;
 import nazario.grimoire.registry.ParticleRegistry;
 import nazario.grimoire.registry.SoundRegistry;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
 
+@Environment(EnvType.CLIENT)
 public class GrimoireClient implements ClientModInitializer {
 
     @Override
@@ -34,10 +37,10 @@ public class GrimoireClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.SPRUCE_CONNECTED_LOG_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.WARPED_CONNECTED_LOG_BLOCK, RenderLayer.getCutout());
 
-        EntityModelLayerRegistry.registerModelLayer(EntityTypeRegistry.PLAYER_REMAINS_MODEL_LAYER, PlayerRemainsEntityModel::getTexturedModelData);
+        //EntityModelLayerRegistry.registerModelLayer(EntityTypeRegistry.PLAYER_REMAINS_MODEL_LAYER, PlayerRemainsEntityModel::getTexturedModelData);
         EntityRendererRegistry.register(EntityTypeRegistry.PLAYER_REMAINS_TYPE, PlayerRemainsEntityRenderer::new);
 
-        EntityRendererRegistry.register(EntityTypeRegistry.GLASS_ITEM_FRAME, GlassItemFrameEntityRenderer::new);
+        //EntityRendererRegistry.register(EntityTypeRegistry.GLASS_ITEM_FRAME, GlassItemFrameEntityRenderer::new);
 
         //ClientSpriteRegistryCallback.event(PlayerScreenHandler.BLOCK_ATLAS_TEXTURE).register((((spriteAtlasTexture, registry) -> {
         //    registry.register(Grimoire.id("particle/spear_pierce"));

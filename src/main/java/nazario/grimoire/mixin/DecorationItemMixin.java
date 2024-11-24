@@ -65,8 +65,8 @@ public abstract class DecorationItemMixin {
                 abstractDecorationEntity = new ItemFrameEntity(world, placePos, direction);
             } else if (this.entityType == EntityType.GLOW_ITEM_FRAME) {
                 abstractDecorationEntity = new GlowItemFrameEntity(world, placePos, direction);
-            } else if(this.entityType == EntityTypeRegistry.GLASS_ITEM_FRAME) {
-                abstractDecorationEntity = GlassItemFrameEntity.create(world, placePos, direction);
+            } else if(false) {
+                //abstractDecorationEntity = GlassItemFrameEntity.create(world, placePos, direction);
             } else {
                 return ActionResult.success(world.isClient);
             }

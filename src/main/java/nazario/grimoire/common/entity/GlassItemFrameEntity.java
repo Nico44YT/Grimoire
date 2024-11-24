@@ -14,13 +14,13 @@ public class GlassItemFrameEntity extends ItemFrameEntity {
         super(entityType, world);
     }
 
-    public static GlassItemFrameEntity create(World world, BlockPos blockPos, Direction direction) {
-        GlassItemFrameEntity entity =  new GlassItemFrameEntity(EntityTypeRegistry.GLASS_ITEM_FRAME, world);
-        entity.attachmentPos = blockPos;
-        entity.setFacing(direction);
-
-        return entity;
-    }
+    //public static GlassItemFrameEntity create(World world, BlockPos blockPos, Direction direction) {
+    //    GlassItemFrameEntity entity =  new GlassItemFrameEntity(EntityTypeRegistry.GLASS_ITEM_FRAME, world);
+    //    entity.attachmentPos = blockPos;
+    //    entity.setFacing(direction);
+//
+    //    return entity;
+    //}
 
     @Override
     public boolean isInvisible() {

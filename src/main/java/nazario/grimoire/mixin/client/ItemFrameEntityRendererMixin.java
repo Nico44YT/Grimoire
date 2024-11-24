@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-
+@Environment(EnvType.CLIENT)
 @Mixin(ItemFrameEntityRenderer.class)
 public abstract class ItemFrameEntityRendererMixin<T extends ItemFrameEntity> extends EntityRenderer<T> {
 
@@ -28,10 +28,10 @@ public abstract class ItemFrameEntityRendererMixin<T extends ItemFrameEntity> ex
 
     @Inject(method = "getModelId", at = @At("HEAD"), cancellable = true)
     public void grimoire$getModelId(T entity, ItemStack stack, CallbackInfoReturnable<ModelIdentifier> cir) {
-        boolean bl = entity.getType() == EntityTypeRegistry.GLASS_ITEM_FRAME;
-        if(bl) {
+        //boolean bl = entity.getType() == EntityTypeRegistry.GLASS_ITEM_FRAME;
+        /*if(bl) {
             System.out.println("I'm tired...");
             cir.setReturnValue(GlassItemFrameEntityRenderer.GLASS_NORMAL_FRAME);
-        }
+        }*/
     }
 }
