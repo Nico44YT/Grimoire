@@ -60,7 +60,6 @@ public class PlayerEntityMixin {
          if((LivingEntity)(Object)this instanceof PlayerEntity playerEntity) {
             if(EnchantmentHelper.getLevel(EnchantmentRegistry.GOLEM_SHROUD_ENCHANTMENT, playerEntity.getEquippedStack(EquipmentSlot.CHEST)) > 0) {
                 (playerEntity).addExhaustion(0.5f * (float)(6));
-                System.out.println("YES");
             }
         }
     }

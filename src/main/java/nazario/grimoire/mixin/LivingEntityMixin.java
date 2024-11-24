@@ -1,11 +1,16 @@
 package nazario.grimoire.mixin;
 
+import dev.emi.trinkets.api.Trinket;
+import dev.emi.trinkets.api.TrinketsApi;
+import nazario.grimoire.Grimoire;
 import nazario.grimoire.common.enchantments.EffectStealingEnchantment;
 import nazario.grimoire.common.entity.remains.PlayerRemainsEntity;
 import nazario.grimoire.common.item.TwoHanded;
 import nazario.grimoire.registry.BlockRegistry;
 import nazario.grimoire.registry.EnchantmentRegistry;
 import nazario.grimoire.registry.EntityTypeRegistry;
+import nazario.grimoire.util.TrinketsHelper;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -21,15 +26,18 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.GameRules;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
-public class LivingEntityMixin {
+public abstract class LivingEntityMixin {
+
+    @Shadow protected abstract void consumeItem();
 
     @Inject(method = "getOffHandStack", at = @At("HEAD"), cancellable = true)
-    public void getOffHandStack(CallbackInfoReturnable<ItemStack> cir) {
+    public void grimoire$getOffHandStack(CallbackInfoReturnable<ItemStack> cir) {
         if((LivingEntity)(Object)this instanceof PlayerEntity player) {
             if(player.getMainHandStack().getItem() instanceof TwoHanded) cir.setReturnValue(new ItemStack(Items.AIR));
         }
@@ -112,20 +120,30 @@ public class LivingEntityMixin {
             PlayerRemainsEntity playerRemainsEntity = new PlayerRemainsEntity(EntityTypeRegistry.PLAYER_REMAINS_TYPE, player.world);
             playerRemainsEntity.setPosition(player.getPos());
 
+            playerRemainsEntity.resetInventory();
+
             for(int i = 0;i<player.getInventory().main.size();i++) {
-                playerRemainsEntity.setInventoryStack(i, player.getInventory().getStack(i));
+                playerRemainsEntity.addInventoryStack(player.getInventory().main.get(i));
+            }
+            for(int i = 0;i<player.getInventory().offHand.size();i++) {
+                playerRemainsEntity.addInventoryStack(player.getInventory().offHand.get(i));
             }
 
-            playerRemainsEntity.setInventoryStack(player.getInventory().main.size(), player.getInventory().offHand.get(0));
-
             for(int i = 0;i<player.getInventory().armor.size();i++) {
-                playerRemainsEntity.setInventoryStack(player.getInventory().main.size()+i+1, player.getInventory().getArmorStack(i));
+                playerRemainsEntity.addInventoryStack(player.getInventory().armor.get(i));
+            }
+
+            if(FabricLoader.getInstance().isModLoaded("trinkets")) {
+                try{
+                    TrinketsHelper.findAllEquippedBy(player).forEach(playerRemainsEntity::addInventoryStack);
+                } catch (Exception ingore) {}
             }
 
             playerRemainsEntity.setCustomName(player.getDisplayName());
             playerRemainsEntity.setCustomNameVisible(true);
 
             player.world.spawnEntity(playerRemainsEntity);
+            player.getInventory().clear();
         }
     }
 }

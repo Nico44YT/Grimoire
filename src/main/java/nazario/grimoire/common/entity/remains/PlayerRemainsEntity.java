@@ -84,6 +84,18 @@ public class PlayerRemainsEntity extends LivingEntity implements VehicleInventor
         }
     }
 
+    public void addInventoryStack(ItemStack stack) {
+        if(stack == null) return;
+        if(stack.isEmpty()) return;
+        if(stack.getItem().equals(Items.AIR)) return;
+        for(int i = 0;i<MAX_SIZE;i++) {
+            if(inventory.get(i).getItem().equals(Items.AIR)) {
+                setInventoryStack(i, stack);
+                break;
+            }
+        }
+    }
+
     @Override
     public DefaultedList<ItemStack> getInventory() {
         return inventory;
