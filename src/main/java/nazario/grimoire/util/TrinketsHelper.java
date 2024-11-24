@@ -18,10 +18,18 @@ public class TrinketsHelper {
 
         list.forEach(comp -> {
             comp.getAllEquipped().forEach(pair -> {
-                stacks.add(pair.getRight());
+                stacks.add(pair.getRight().copy());
             });
         });
 
         return stacks;
+    }
+
+    public static void clearAllEquippedTrinkets(LivingEntity entity) {
+        TrinketsApi.getTrinketComponent(entity).stream().forEach(comp -> {
+            comp.getAllEquipped().forEach(pair -> {
+                pair.getRight().setCount(0);
+            });
+        });
     }
 }

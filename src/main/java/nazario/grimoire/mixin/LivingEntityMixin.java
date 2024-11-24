@@ -1,11 +1,13 @@
 package nazario.grimoire.mixin;
 
+import com.mojang.serialization.DataResult;
 import nazario.grimoire.common.enchantments.EffectStealingEnchantment;
 import nazario.grimoire.common.entity.remains.PlayerRemainsEntity;
 import nazario.grimoire.common.item.TwoHanded;
 import nazario.grimoire.registry.BlockRegistry;
 import nazario.grimoire.registry.EnchantmentRegistry;
 import nazario.grimoire.registry.EntityTypeRegistry;
+import nazario.grimoire.registry.GrimGameruleRegistry;
 import nazario.grimoire.util.TrinketsHelper;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -13,20 +15,26 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtHelper;
+import net.minecraft.nbt.NbtOps;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.GameRules;
+import net.minecraft.world.World;
+import org.slf4j.Logger;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.Objects;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin {
@@ -111,7 +119,7 @@ public abstract class LivingEntityMixin {
 
     @Inject(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;onDeath(Lnet/minecraft/entity/damage/DamageSource;)V"))
     private void grimoire$onDeath(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if ((Object) this instanceof PlayerEntity player) {
+        if(((LivingEntity)(Object)this).getWorld().getGameRules().getBoolean(GrimGameruleRegistry.CREATE_GRAVE) && (Object)this instanceof PlayerEntity player) {
             if(player.getWorld().getGameRules().getBoolean(GameRules.KEEP_INVENTORY)) return;
 
             PlayerRemainsEntity playerRemainsEntity = new PlayerRemainsEntity(EntityTypeRegistry.PLAYER_REMAINS_TYPE, player.world);
@@ -120,20 +128,23 @@ public abstract class LivingEntityMixin {
             playerRemainsEntity.resetInventory();
 
             for(int i = 0;i<player.getInventory().main.size();i++) {
-                playerRemainsEntity.addInventoryStack(player.getInventory().main.get(i));
+                playerRemainsEntity.addInventoryStack(player.getInventory().main.get(i).copy());
             }
             for(int i = 0;i<player.getInventory().offHand.size();i++) {
-                playerRemainsEntity.addInventoryStack(player.getInventory().offHand.get(i));
+                playerRemainsEntity.addInventoryStack(player.getInventory().offHand.get(i).copy());
             }
 
             for(int i = 0;i<player.getInventory().armor.size();i++) {
-                playerRemainsEntity.addInventoryStack(player.getInventory().armor.get(i));
+                playerRemainsEntity.addInventoryStack(player.getInventory().armor.get(i).copy());
             }
 
-            if(FabricLoader.getInstance().isModLoaded("trinkets")) {
-                try{
-                    TrinketsHelper.findAllEquippedBy(player).forEach(playerRemainsEntity::addInventoryStack);
-                } catch (Exception ingore) {}
+            if(((LivingEntity)(Object)this).getWorld().getGameRules().getBoolean(GrimGameruleRegistry.SAVE_TRINKETS)) {
+                if(FabricLoader.getInstance().isModLoaded("trinkets")) {
+                    try{
+                        TrinketsHelper.findAllEquippedBy(player).forEach(playerRemainsEntity::addInventoryStack);
+                        TrinketsHelper.clearAllEquippedTrinkets(player);
+                    } catch (Exception ingore) {}
+                }
             }
 
             playerRemainsEntity.setCustomName(player.getDisplayName());
@@ -142,5 +153,21 @@ public abstract class LivingEntityMixin {
             player.world.spawnEntity(playerRemainsEntity);
             player.getInventory().clear();
         }
+    }
+
+    @Inject(method = "onDeath", at = @At("TAIL"))
+    public void grimoire$deathCompass(DamageSource damageSource, CallbackInfo ci) {
+        if((Object)this instanceof PlayerEntity player) {
+            ItemStack stack = new ItemStack(Items.COMPASS);
+            NbtCompound nbt = new NbtCompound();
+            stack.writeNbt(writeCompassNbt(nbt, player.getBlockPos()));
+            player.giveItemStack(stack);
+        }
+    }
+
+    private NbtCompound writeCompassNbt(NbtCompound nbt, BlockPos pos) {
+        nbt.put("LodestonePos", NbtHelper.fromBlockPos(pos));
+        nbt.putBoolean("LodestoneTracked", true);
+        return nbt;
     }
 }

@@ -75,8 +75,8 @@ public class ZekkensVoiceItem extends ToolItem implements TwoHanded {
             }
         }, settings);
 
-        this.attackDamage = 3.5f;
-        this.attackSpeed = -4f + 1.8f;
+        this.attackDamage = 6f;
+        this.attackSpeed = -4f + 1.7f;
 
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Weapon modifier", (double)this.attackDamage, EntityAttributeModifier.Operation.ADDITION));

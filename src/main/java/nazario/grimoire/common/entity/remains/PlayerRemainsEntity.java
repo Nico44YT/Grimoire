@@ -10,7 +10,9 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.vehicle.VehicleInventory;
+import net.minecraft.inventory.Inventories;
 import net.minecraft.item.*;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.GenericContainerScreenHandler;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.util.ActionResult;
@@ -39,6 +41,20 @@ public class PlayerRemainsEntity extends LivingEntity implements VehicleInventor
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0f)
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 100f)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 0f);
+    }
+
+    @Override
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+
+        Inventories.readNbt(nbt, this.getInventory());
+    }
+
+    @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+
+        Inventories.writeNbt(nbt, this.getInventory());
     }
 
     @Override

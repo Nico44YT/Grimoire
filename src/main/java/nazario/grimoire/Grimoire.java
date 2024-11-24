@@ -20,6 +20,7 @@ public class Grimoire implements ModInitializer {
 
         SoundRegistry.register();
         EntityTypeRegistry.register();
+        GrimGameruleRegistry.register();
 
         ServerLifecycleEvents.SERVER_STARTED.register(server -> {
             PersistentData.init(PersistentData.getServerState(server));
