@@ -18,6 +18,7 @@ public class Grimoire implements ModInitializer {
 
         ParticleRegistry.register();
 
+        SoundRegistry.register();
         EntityTypeRegistry.register();
 
         ServerLifecycleEvents.SERVER_STARTED.register(server -> {

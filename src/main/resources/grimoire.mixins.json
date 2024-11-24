@@ -4,21 +4,24 @@
   "package": "nazario.grimoire.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "LivingEntityMixin",
-    "EndStrongholdGenMixin",
-    "ServerPlayerEntityMixin",
     "AxeMixin",
-    "PlayerEntityMixin"
+    "EndStrongholdGenMixin",
+    "ItemMixin",
+    "LivingEntityMixin",
+    "PlayerEntityMixin",
+    "ServerPlayerEntityMixin"
   ],
   "client": [
-    "client.HeldItemFeatureRendererMixin",
     "client.BipedEntityModelMixin",
+    "client.HeldItemFeatureRendererMixin",
     "client.HeldItemRendererMixin",
-    "client.PlayerEntityRendererMixin",
+    "client.ItemFrameEntityRendererMixin",
     "client.ItemRendererAccessor",
     "client.ItemRendererMixin",
     "client.ModelLoaderMixin",
-    "client.BlockRendererMixin"
+    "client.NoteParticleFactoryMixin",
+    "client.NoteParticleMixin",
+    "client.PlayerEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

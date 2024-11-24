@@ -38,6 +38,7 @@ public class PlayerEntityMixin {
     @Inject(method = "attack", at = @At("HEAD"), cancellable = true)
     public void grimoire$attack(Entity target, CallbackInfo ci) {
         PlayerEntity player = (PlayerEntity)(Object)this;
+
         if(player.getMainHandStack().getItem().equals(ItemRegistry.ANGELIC_SPEAR)) {
             List<LivingEntity> list = player.world.getNonSpectatingEntities(LivingEntity.class, target.getBoundingBox().expand(0.5, 0.25, 0.5));
             for (LivingEntity livingEntity : list) {
@@ -46,6 +47,10 @@ public class PlayerEntityMixin {
                 livingEntity.damage(DamageSource.player(player), 3);
             }
             player.world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, player.getSoundCategory(), 1.0f, 1.0f);
+        }
+
+        if(player.getMainHandStack().getItem().equals(ItemRegistry.ZEKKENS_VOICE)) {
+            player.world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BLOCK_NOTE_BLOCK_GUITAR, player.getSoundCategory(), 1.0f, 1.0f);
         }
     }
 

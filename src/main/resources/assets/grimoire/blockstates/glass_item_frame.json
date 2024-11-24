@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "grimoire:block/glass_item_frame"
+        }
+    }
+}

@@ -1,15 +1,12 @@
 package nazario.grimoire.mixin;
 
 import nazario.grimoire.common.enchantments.EffectStealingEnchantment;
-import nazario.grimoire.common.entity.PlayerRemainsEntity;
-import nazario.grimoire.common.item.AngelicSpearItem;
+import nazario.grimoire.common.entity.remains.PlayerRemainsEntity;
+import nazario.grimoire.common.item.TwoHanded;
 import nazario.grimoire.registry.BlockRegistry;
 import nazario.grimoire.registry.EnchantmentRegistry;
 import nazario.grimoire.registry.EntityTypeRegistry;
-import nazario.grimoire.registry.ItemRegistry;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffects;
@@ -34,7 +31,7 @@ public class LivingEntityMixin {
     @Inject(method = "getOffHandStack", at = @At("HEAD"), cancellable = true)
     public void getOffHandStack(CallbackInfoReturnable<ItemStack> cir) {
         if((LivingEntity)(Object)this instanceof PlayerEntity player) {
-            if(player.getMainHandStack().getItem() instanceof AngelicSpearItem) cir.setReturnValue(new ItemStack(Items.AIR));
+            if(player.getMainHandStack().getItem() instanceof TwoHanded) cir.setReturnValue(new ItemStack(Items.AIR));
         }
     }
 

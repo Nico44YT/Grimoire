@@ -4,3 +4,6 @@ accessible class net/minecraft/client/render/item/HeldItemRenderer$HandRenderTyp
 accessible method net/minecraft/entity/Entity getJumpVelocityMultiplier ()F
 accessible method net/minecraft/block/Block setDefaultState (Lnet/minecraft/block/BlockState;)V
 accessible field net/minecraft/client/render/block/BlockRenderManager blockModelRenderer Lnet/minecraft/client/render/block/BlockModelRenderer;
+accessible field net/minecraft/client/particle/Particle velocityX D
+accessible field net/minecraft/client/particle/Particle velocityY D
+accessible field net/minecraft/client/particle/Particle velocityZ D

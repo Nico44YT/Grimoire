@@ -13,11 +13,16 @@
   "enchantment.grimoire.golem_shroud": "Golem Shroud",
   "enchantment.grimoire.golem_shroud.desc": "Offers protection from all damage, but reduces your movement speed",
 
+  "enchantment.grimoire.zekkens_notes_boom": "Zekken's Notes Boom",
+  "enchantment.grimoire.zekkens_notes_boom.desc": "",
+
   "block.grimoire.aquarium_glass_pane": "Aquarium Glass Pane",
   "block.grimoire.moss_carpet_vines": "Moss Carpet Vines",
   "block.grimoire.iron_scaffolding": "Iron Scaffolding",
 
   "item.grimoire.angelic_spear": "Angelic Spear",
+  "item.grimoire.zekkens_voice": "Zekken's Voice",
+  "item.grimoire.zekkens_voice.desc": "§8Forged with the sounds of the universe themself.",
 
   "block.grimoire.acacia_connected_log": "Acacia Connected Log",
   "block.grimoire.birch_connected_log": "Birch Connected Log",

@@ -1,4 +1,4 @@
-package nazario.grimoire.common.entity;
+package nazario.grimoire.common.entity.remains;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
