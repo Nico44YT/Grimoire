@@ -1,0 +1,21 @@
+{
+  "blend": {
+    "func": "add",
+    "srcrgb": "one",
+    "dstrgb": "zero"
+  },
+  "vertex": "sobel",
+  "fragment": "grimoire:anxiety",
+  "attributes": [ "Position" ],
+  "samplers": [
+    { "name": "DiffuseSampler" },
+    { "name": "overlayTex" }
+  ],
+  "uniforms": [
+    { "name": "ProjMat",   "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+    { "name": "InSize",    "type": "float",     "count": 2,  "values": [ 1.0, 1.0 ] },
+    { "name": "OutSize",   "type": "float",     "count": 2,  "values": [ 1.0, 1.0 ] },
+    { "name": "intensity", "type": "float",     "count": 1,  "values": [ 0.0 ] },
+    { "name": "overlayTex","type": "sampler2D", "count": 1,  "values": [ 2 ] }
+  ]
+}

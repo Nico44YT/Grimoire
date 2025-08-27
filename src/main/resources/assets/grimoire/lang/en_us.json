@@ -1,0 +1,35 @@
+{
+  "grimoire.item_group": "Grimoire",
+  "death.grimoire.bannishment": "%s's soul was banished to a different realm",
+
+  "block.grimoire.flesh_block": "Flesh Block",
+
+  "item.grimoire.grimoire": "§8Grimoire",
+  "item.grimoire.grimoire.desc": "§7§kThe cake is a lie.",
+
+  "item.grimoire.unchained_grimoire": "§8Unchained Grimoire!",
+  "item.grimoire.unchained_grimoire.desc": "§7§o\"Life is for the living.\n§7§oDeath is for the dead.\n§7§oLet life be like music.\n§7§oAnd death a note unsaid.\"",
+
+  "item.grimoire.grimoire.soul_bound": "§cCurse of Soulbound",
+
+  "item.grimoire.tattered_grimoire": "§8Tattered Grimoire",
+
+  "block.grimoire.obelisk_pillar": "Obelisk Pillar",
+
+  "grimoire.options.screen_shake_intensity": "Screen Shake",
+
+  "item.grimoire.oathbreaker": "§cOathbreaker",
+  "item.grimoire.oathbreaker.lore": "§7Break the vow you swore to keep,\n§7And shadows rise from restless sleep.\n§7For every sin, a price is due—\n§7The Oathbreaker comes, and follows you.",
+
+  "entity.grimoire.avenging_soulmould": "Avenging Mould of Souls",
+  "info.grimoire.avenging_soulmould_activate": "§r%s in Guard state",
+  "info.grimoire.avenging_soulmould_deactivate": "§r%s in Dormant state",
+
+  "item.grimoire.avenging_soulmould": "Avenging Mould of Souls",
+  "item.grimoire.avenging_soulmould.lore": "§cCan my soul be put to rest?",
+
+  "death.attack.grimoire.oathbreaking.player": "%s's oath was broken.",
+  "death.attack.grimoire.oathbreaking": "%s's oath was broken.",
+  "death.attack.grimoire.oathbreaking_direct.player": "%s's oath was broken.",
+  "death.attack.grimoire.oathbreaking_direct": "%s's oath was broken."
+}

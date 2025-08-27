@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "grimoire",
+  "version": "${version}",
+  "name": "Grimoire - Unchained",
+  "description": "",
+  "authors": [
+    "Developer: Nico_44",
+    "Artist: eyalego",
+    "Artist: 1nkCrow"
+  ],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/grimoire/icon.png",
+  "environment": "*",
+  "accessWidener": "grimoire.accesswidener",
+  "entrypoints": {
+    "client": [
+      "nazario.grimoire.client.GrimoireClient"
+    ],
+    "main": [
+      "nazario.grimoire.GrimoireMain"
+    ],
+    "fabric-datagen": [
+      "nazario.grimoire.datagen.GrimoireDataGen"
+    ]
+  },
+  "mixins": [
+    "grimoire.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
