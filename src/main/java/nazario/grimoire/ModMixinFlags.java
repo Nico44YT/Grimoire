@@ -1,5 +1,5 @@
 package nazario.grimoire;
 
 public class ModMixinFlags {
-    public static boolean drawCustomBackground = false;
+    public static boolean drawCustomTooltip = false;
 }

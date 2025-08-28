@@ -1,0 +1,10 @@
+{
+  "providers": [
+    {
+      "type": "ttf",
+      "file": "grimoire:blackcraft.ttf",
+      "size": 13,
+      "oversample": 2
+    }
+  ]
+}

@@ -21,7 +21,7 @@ public abstract class ItemStackMixin {
 
     @Inject(method = "getTooltipData", at = @At("HEAD"))
     public void grimoire$getTooltipData(CallbackInfoReturnable<Optional<TooltipData>> cir) {
-        ModMixinFlags.drawCustomBackground = this.item instanceof CustomTooltipBackground;
+        ModMixinFlags.drawCustomTooltip = this.item instanceof CustomTooltipBackground;
     }
 
 }

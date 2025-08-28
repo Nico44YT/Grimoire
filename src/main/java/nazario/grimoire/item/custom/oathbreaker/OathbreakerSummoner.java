@@ -1,5 +1,6 @@
 package nazario.grimoire.item.custom.oathbreaker;
 
+import nazario.grimoire.GrimoireMain;
 import nazario.grimoire.ModMixinFlags;
 import nazario.grimoire.entity.oathbreaker_projectile.OathbreakerProjectileEntity;
 import nazario.grimoire.item.CustomTooltipBackground;
@@ -11,6 +12,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.text.MutableText;
+import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
@@ -37,12 +40,18 @@ public class OathbreakerSummoner extends Item implements GeoItem, CustomTooltipB
     boolean isCharging = false;
 
     @Override
+    public Text getName(ItemStack stack) {
+        Text name = super.getName(stack);
+        return Text.literal("").append(name).setStyle(name.getStyle().withFont((GrimoireMain.FONT))); // Is this convoluted and stupid, yes.
+    }
+
+    @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         String[] textDesc = Text.translatable("item.grimoire.oathbreaker.lore").getString().split("\n");
         for(int i = 0;i<textDesc.length;i++) {
-            tooltip.add(i + 1, Text.literal(textDesc[i]));
+            tooltip.add(i + 1, Text.literal(textDesc[i]).setStyle(Style.EMPTY.withFont(GrimoireMain.FONT)));
         }
-        tooltip.add(textDesc.length + 1, Text.translatable("item.grimoire.grimoire.soul_bound"));
+        tooltip.add(textDesc.length + 1, Text.translatable("item.grimoire.grimoire.soul_bound").setStyle(Style.EMPTY.withFont((GrimoireMain.FONT))));
     }
 
     public OathbreakerSummoner(Settings settings) {

@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 
 public class GrimoireMain implements ModInitializer {
 
+    public static final Identifier FONT = id("blackcraft");
     public static final String MOD_ID = "grimoire";
 
     @Override
