@@ -1,1 +1,6 @@
 accessWidener v2 named
+
+accessible method net/minecraft/client/gui/tooltip/TooltipBackgroundRenderer renderHorizontalLine (Lnet/minecraft/client/gui/DrawContext;IIIII)V
+accessible method net/minecraft/client/gui/tooltip/TooltipBackgroundRenderer renderRectangle (Lnet/minecraft/client/gui/DrawContext;IIIIII)V
+accessible method net/minecraft/client/gui/tooltip/TooltipBackgroundRenderer renderVerticalLine (Lnet/minecraft/client/gui/DrawContext;IIIII)V
+accessible method net/minecraft/client/gui/tooltip/TooltipBackgroundRenderer renderBorder (Lnet/minecraft/client/gui/DrawContext;IIIIIII)V

@@ -10,7 +10,6 @@ public class ModItems {
 
     public static Item OATHBREAKER = REGISTRY.registerItem("oathbreaker", new OathbreakerSummoner(new Item.Settings().maxCount(1)));
 
-
     public static void register() {
 
     }

@@ -4,8 +4,10 @@
   "package": "nazario.grimoire.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ItemStackMixin"
   ],
   "client": [
+    "client.TooltipBackgroundRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
