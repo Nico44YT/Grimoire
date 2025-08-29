@@ -1,6 +1,6 @@
 package nazario.grimoire.client.renderer;
 
-import nazario.grimoire.components.PlayerRenderingComponent;
+import nazario.grimoire.components.PlayerRenderingDataComponent;
 import nazario.grimoire.item.ModItems;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.feature.FeatureRenderer;
@@ -28,7 +28,7 @@ public class OathbreakerPlayerFeatureRenderer<T extends PlayerEntity, M extends 
                        T entity, float limbAngle, float limbDistance, float tickDelta,
                        float animationProgress, float headYaw, float headPitch) {
 
-        PlayerRenderingComponent.KEY.maybeGet(entity).ifPresent(comp -> {
+        PlayerRenderingDataComponent.KEY.maybeGet(entity).ifPresent(comp -> {
             if(comp.shouldOathbreakerFeatureRender()) {
                 Arm mainArm = entity.getMainArm();
 

@@ -38,7 +38,8 @@
   },
   "custom": {
     "cardinal-components": [
-      "grimoire:player_rendering_component"
+      "grimoire:player_rendering_data",
+      "grimoire:player_rendering_preferences"
     ]
   }
 }

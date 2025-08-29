@@ -8,3 +8,9 @@ accessible method net/minecraft/client/gui/tooltip/TooltipBackgroundRenderer ren
 accessible method net/minecraft/entity/Entity getVelocityAffectingPos ()Lnet/minecraft/util/math/BlockPos;
 accessible field net/minecraft/entity/Entity firstUpdate Z
 accessible field net/minecraft/entity/Entity fluidHeight Lit/unimi/dsi/fastutil/objects/Object2DoubleMap;
+
+accessible field net/minecraft/server/MinecraftServer worlds Ljava/util/Map;
+accessible field net/minecraft/server/MinecraftServer workerExecutor Ljava/util/concurrent/Executor;
+accessible field net/minecraft/server/MinecraftServer session Lnet/minecraft/world/level/storage/LevelStorage$Session;
+accessible field net/minecraft/server/MinecraftServer worldGenerationProgressListenerFactory Lnet/minecraft/server/WorldGenerationProgressListenerFactory;
+accessible field net/minecraft/world/level/storage/LevelStorage$Session directory Lnet/minecraft/world/level/storage/LevelStorage$LevelSave;

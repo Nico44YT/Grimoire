@@ -11,16 +11,16 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 
-public class PlayerRenderingComponent implements AutoSyncedComponent, ServerTickingComponent {
+public class PlayerRenderingDataComponent implements AutoSyncedComponent, ServerTickingComponent {
 
-    public static final Identifier ID = GrimoireMain.id("player_rendering_component");
-    public static final ComponentKey<PlayerRenderingComponent> KEY = ComponentRegistry.getOrCreate(ID, PlayerRenderingComponent.class);
+    public static final Identifier ID = GrimoireMain.id("player_rendering_data");
+    public static final ComponentKey<PlayerRenderingDataComponent> KEY = ComponentRegistry.getOrCreate(ID, PlayerRenderingDataComponent.class);
 
     private final PlayerEntity owner;
 
     private boolean renderOathbreakerFeature = false;
 
-    public PlayerRenderingComponent(PlayerEntity player) {
+    public PlayerRenderingDataComponent(PlayerEntity player) {
         this.owner = player;
     }
 
@@ -28,7 +28,7 @@ public class PlayerRenderingComponent implements AutoSyncedComponent, ServerTick
         return this.renderOathbreakerFeature;
     }
 
-    public PlayerRenderingComponent setOathbreakerFeatureRendering(boolean bool) {
+    public PlayerRenderingDataComponent setOathbreakerFeatureRendering(boolean bool) {
         this.renderOathbreakerFeature = bool;
         return this;
     }
