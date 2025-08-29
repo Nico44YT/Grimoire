@@ -40,7 +40,7 @@ public abstract class CreativeInventoryScreenMixin {
         float opacityTarget = isGrimoireTab ? 0.5f : 0f;
         opacity = MathHelper.lerp(0.05f, opacity, opacityTarget);
 
-        if (opacity > 0.01f) { // skip if fully transparent
+        if (opacity > 0.001f) {
             RenderSystem.enableBlend();
             RenderSystem.defaultBlendFunc();
             instance.setShaderColor(1f, 1f, 1f, opacity);

@@ -4,3 +4,7 @@ accessible method net/minecraft/client/gui/tooltip/TooltipBackgroundRenderer ren
 accessible method net/minecraft/client/gui/tooltip/TooltipBackgroundRenderer renderRectangle (Lnet/minecraft/client/gui/DrawContext;IIIIII)V
 accessible method net/minecraft/client/gui/tooltip/TooltipBackgroundRenderer renderVerticalLine (Lnet/minecraft/client/gui/DrawContext;IIIII)V
 accessible method net/minecraft/client/gui/tooltip/TooltipBackgroundRenderer renderBorder (Lnet/minecraft/client/gui/DrawContext;IIIIIII)V
+
+accessible method net/minecraft/entity/Entity getVelocityAffectingPos ()Lnet/minecraft/util/math/BlockPos;
+accessible field net/minecraft/entity/Entity firstUpdate Z
+accessible field net/minecraft/entity/Entity fluidHeight Lit/unimi/dsi/fastutil/objects/Object2DoubleMap;

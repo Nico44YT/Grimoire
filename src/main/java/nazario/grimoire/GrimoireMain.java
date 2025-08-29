@@ -1,6 +1,7 @@
 package nazario.grimoire;
 
 import nazario.grimoire.block.ModBlocks;
+import nazario.grimoire.block.ModFluids;
 import nazario.grimoire.entity.ModEntities;
 import nazario.grimoire.item.ModItems;
 import nazario.grimoire.misc.ModDamageTypes;
@@ -18,6 +19,7 @@ public class GrimoireMain implements ModInitializer {
         ModSounds.register();
         ModDamageTypes.register();
 
+        ModFluids.register();
         ModItems.register();
         ModBlocks.register();
         ModEntities.register();
