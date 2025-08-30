@@ -5,7 +5,6 @@ import dev.onyxstudios.cca.api.v3.entity.EntityComponentInitializer;
 import nazario.grimoire.block.ModBlocks;
 import nazario.grimoire.block.ModFluids;
 import nazario.grimoire.command.GrimoireMainCommand;
-import nazario.grimoire.command.GrimoirePocketDimensionCommand;
 import nazario.grimoire.components.PlayerRenderingDataComponent;
 import nazario.grimoire.components.PlayerRenderingPreferencesComponent;
 import nazario.grimoire.data.PocketDimensionDataManager;

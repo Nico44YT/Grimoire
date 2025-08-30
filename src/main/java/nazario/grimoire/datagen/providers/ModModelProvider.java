@@ -17,10 +17,12 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.FLESH_BLOCK);
         blockStateModelGenerator.registerSimpleState(ModBlocks.VANISHED);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARKNESS);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.VANISHED_BUCKET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SKULL_KEY, Models.GENERATED);
     }
 }

@@ -21,6 +21,8 @@
   "item.grimoire.oathbreaker": "§cOathbreaker",
   "item.grimoire.oathbreaker.lore": "§7Break the vow you swore to keep,\n§7And shadows rise from restless sleep.\n§7For every sin, a price is due—\n§7The Oathbreaker comes, and follows you.",
 
+  "item.grimoire.skull_key": "Skull Key",
+
   "entity.grimoire.avenging_soulmould": "Avenging Mould of Souls",
   "info.grimoire.avenging_soulmould_activate": "§r%s in Guard state",
   "info.grimoire.avenging_soulmould_deactivate": "§r%s in Dormant state",

@@ -1,5 +1,6 @@
 package nazario.grimoire.mixin.client;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import nazario.grimoire.GrimoireMain;
 import nazario.grimoire.ModMixinFlags;
 import nazario.liby.api.util.LibyDrawContext;
@@ -35,8 +36,8 @@ public abstract class TooltipBackgroundRendererMixin {
     private static void grimoire$renderTooltipBackground(DrawContext context, int x, int y, int width, int height, int z, CallbackInfo ci) {
         if(ModMixinFlags.drawCustomTooltip) {
             LibyDrawContext libyDrawContext = new LibyDrawContext(context);
-            int toolTipBorder = 8;
-            int border = 9;
+            int toolTipBorder = 9;
+            int border = 10;
             int startX = x - border;
             int startY = y - border;
             int endX = width + border * 2;
@@ -60,7 +61,10 @@ public abstract class TooltipBackgroundRendererMixin {
                     new Color(80 - renderColor, 0, 0, 250).getRGB(),
                     new Color(40 + renderColor, 0, 0, 250).getRGB()
             );
+
+            RenderSystem.enableBlend();
             libyDrawContext.drawNineSlicedTexture(TOOLTIP_BACKGROUND, x - toolTipBorder - 1, y - toolTipBorder - 1, z + 1, width + toolTipBorder * 2 + 2, height + toolTipBorder * 2 + 2, toolTipBorder, 130, 24, 0, 0);
+            RenderSystem.disableBlend();
 
             ci.cancel();
             ModMixinFlags.drawCustomTooltip = false;
