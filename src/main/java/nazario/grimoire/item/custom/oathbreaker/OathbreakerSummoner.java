@@ -1,9 +1,9 @@
 package nazario.grimoire.item.custom.oathbreaker;
 
 import nazario.grimoire.GrimoireMain;
-import nazario.grimoire.ModMixinFlags;
 import nazario.grimoire.entity.oathbreaker_projectile.OathbreakerProjectileEntity;
 import nazario.grimoire.item.CustomTooltipBackground;
+import nazario.grimoire.item.custom.SoulboundItem;
 import nazario.grimoire.misc.ModSounds;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.render.item.BuiltinModelItemRenderer;
@@ -12,7 +12,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
@@ -35,7 +34,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class OathbreakerSummoner extends Item implements GeoItem, CustomTooltipBackground {
+public class OathbreakerSummoner extends Item implements GeoItem, CustomTooltipBackground, SoulboundItem {
 
     boolean isCharging = false;
 

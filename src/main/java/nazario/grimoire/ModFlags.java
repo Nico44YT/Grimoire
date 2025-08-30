@@ -1,5 +1,7 @@
 package nazario.grimoire;
 
-public class ModMixinFlags {
+public class ModFlags {
     public static boolean drawCustomTooltip = false;
+
+    public static boolean nicosGravesInstalled = false;
 }

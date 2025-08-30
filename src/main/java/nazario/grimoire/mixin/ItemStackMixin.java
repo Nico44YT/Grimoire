@@ -1,6 +1,6 @@
 package nazario.grimoire.mixin;
 
-import nazario.grimoire.ModMixinFlags;
+import nazario.grimoire.ModFlags;
 import nazario.grimoire.item.CustomTooltipBackground;
 import net.minecraft.client.item.TooltipData;
 import net.minecraft.item.Item;
@@ -21,7 +21,7 @@ public abstract class ItemStackMixin {
 
     @Inject(method = "getTooltipData", at = @At("HEAD"))
     public void grimoire$getTooltipData(CallbackInfoReturnable<Optional<TooltipData>> cir) {
-        ModMixinFlags.drawCustomTooltip = this.item instanceof CustomTooltipBackground;
+        ModFlags.drawCustomTooltip = this.item instanceof CustomTooltipBackground;
     }
 
 }

@@ -1,0 +1,95 @@
+{
+  "credit": "Nico_44",
+  "parent": "builtin/entity",
+  "texture_size": [
+    32,
+    32
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        80,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        1.25,
+        1.25,
+        1.25
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        91,
+        180,
+        17
+      ],
+      "translation": [
+        -1.5,
+        2.25,
+        0.75
+      ],
+      "scale": [
+        1.25,
+        1.25,
+        1.25
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        46,
+        -180,
+        -61
+      ],
+      "translation": [
+        2,
+        3.25,
+        0
+      ],
+      "scale": [
+        1.25,
+        1.25,
+        1.25
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        46,
+        180,
+        -11
+      ],
+      "translation": [
+        -2,
+        3.25,
+        0
+      ],
+      "scale": [
+        1.25,
+        1.25,
+        1.25
+      ]
+    },
+    "gui": {
+      "rotation": [
+        55.8,
+        5.77,
+        3.94
+      ],
+      "translation": [
+        0,
+        -0.75,
+        0
+      ],
+      "scale": [
+        1.5,
+        1.5,
+        1.5
+      ]
+    }
+  }
+}

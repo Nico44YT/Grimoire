@@ -2,6 +2,8 @@ package nazario.grimoire.item;
 
 import nazario.grimoire.GrimoireMain;
 import nazario.grimoire.block.ModFluids;
+import nazario.grimoire.item.custom.RedirectItem;
+import nazario.grimoire.item.custom.grimoire_book.GrimoireBookItem;
 import nazario.grimoire.item.custom.oathbreaker.OathbreakerSummoner;
 import nazario.grimoire.item.custom.skull_key.SkullKeyItem;
 import nazario.liby.api.registry.helper.LibyItemRegistry;
@@ -26,8 +28,11 @@ public class ModItems {
     public static final Item OATHBREAKER = REGISTRY.registerItem("oathbreaker", new OathbreakerSummoner(new Item.Settings().maxCount(1)));
     public static final Item VANISHED_BUCKET = REGISTRY.registerItem("vanished_fluid_bucket", new BucketItem(ModFluids.VANISHED, new Item.Settings().maxCount(1)));
     public static final Item SKULL_KEY = REGISTRY.registerItem("skull_key", new SkullKeyItem(new Item.Settings().maxCount(1)));
+    public static final Item GRIMOIRE = REGISTRY.registerItem("grimoire", new GrimoireBookItem(new Item.Settings().maxCount(1)));
 
     public static void register() {
+        REGISTRY.registerItem("grimoire_in_hand", new RedirectItem(() -> ModItems.GRIMOIRE));
+
         Registry.register(Registries.ITEM_GROUP, GROUP.getValue(),
                 FabricItemGroup.builder()
                         .icon(OATHBREAKER::getDefaultStack)
@@ -35,7 +40,7 @@ public class ModItems {
                         .build());
 
         ItemGroupEvents.modifyEntriesEvent(GROUP).register(con -> {
-            con.addAfter(Items.AIR, OATHBREAKER, SKULL_KEY, VANISHED_BUCKET);
+            con.addAfter(Items.AIR, OATHBREAKER, SKULL_KEY, VANISHED_BUCKET, GRIMOIRE);
         });
     }
 }

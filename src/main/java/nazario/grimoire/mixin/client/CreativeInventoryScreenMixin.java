@@ -2,7 +2,7 @@ package nazario.grimoire.mixin.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import nazario.grimoire.GrimoireMain;
-import nazario.grimoire.ModMixinFlags;
+import nazario.grimoire.ModFlags;
 import nazario.grimoire.item.ModItems;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
@@ -27,7 +27,7 @@ public abstract class CreativeInventoryScreenMixin {
     @Inject(method = "renderTabTooltipIfHovered", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawTooltip(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/text/Text;II)V"))
     public void grimoire$renderTabTooltip(DrawContext context, ItemGroup group, int mouseX, int mouseY, CallbackInfoReturnable<Boolean> cir) {
         if(group.equals(Registries.ITEM_GROUP.get(ModItems.GROUP))) {
-            ModMixinFlags.drawCustomTooltip = true;
+            ModFlags.drawCustomTooltip = true;
         }
     }
 

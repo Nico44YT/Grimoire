@@ -2,7 +2,7 @@ package nazario.grimoire.mixin.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import nazario.grimoire.GrimoireMain;
-import nazario.grimoire.ModMixinFlags;
+import nazario.grimoire.ModFlags;
 import nazario.liby.api.util.LibyDrawContext;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
@@ -34,7 +34,7 @@ public abstract class TooltipBackgroundRendererMixin {
 
     @Inject(method = "render", at = @At("HEAD"), cancellable = true)
     private static void grimoire$renderTooltipBackground(DrawContext context, int x, int y, int width, int height, int z, CallbackInfo ci) {
-        if(ModMixinFlags.drawCustomTooltip) {
+        if(ModFlags.drawCustomTooltip) {
             LibyDrawContext libyDrawContext = new LibyDrawContext(context);
             int toolTipBorder = 9;
             int border = 10;
@@ -67,7 +67,7 @@ public abstract class TooltipBackgroundRendererMixin {
             RenderSystem.disableBlend();
 
             ci.cancel();
-            ModMixinFlags.drawCustomTooltip = false;
+            ModFlags.drawCustomTooltip = false;
         }
     }
 }

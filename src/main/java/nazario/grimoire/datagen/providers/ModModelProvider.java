@@ -24,5 +24,6 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.VANISHED_BUCKET, Models.GENERATED);
         itemModelGenerator.register(ModItems.SKULL_KEY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GRIMOIRE, Models.GENERATED);
     }
 }

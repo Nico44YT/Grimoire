@@ -2,6 +2,7 @@ package nazario.grimoire;
 
 import dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry;
 import dev.onyxstudios.cca.api.v3.entity.EntityComponentInitializer;
+import nazario.grimoire.animations.ModAnimations;
 import nazario.grimoire.block.ModBlocks;
 import nazario.grimoire.block.ModFluids;
 import nazario.grimoire.command.GrimoireMainCommand;
@@ -15,6 +16,7 @@ import nazario.grimoire.misc.ModSounds;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
 
@@ -25,8 +27,12 @@ public class GrimoireMain implements ModInitializer, EntityComponentInitializer 
 
     @Override
     public void onInitialize() {
+        ModFlags.nicosGravesInstalled = FabricLoader.getInstance().isModLoaded("nicos_graves");
+
         ModSounds.register();
         ModDamageTypes.register();
+
+        ModAnimations.register();
 
         ModFluids.register();
         ModItems.register();

@@ -5,10 +5,13 @@ import nazario.grimoire.block.ModBlocks;
 import nazario.grimoire.block.ModFluids;
 import nazario.grimoire.block.custom.grand_door.client.GrandDoorRenderer;
 import nazario.grimoire.entity.ModEntities;
+import nazario.grimoire.item.ModItems;
+import nazario.liby.api.assetgen.v1.client.LibyAssetRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.util.ModelIdentifier;
 
 public class GrimoireClient implements ClientModInitializer {
 
@@ -23,5 +26,14 @@ public class GrimoireClient implements ClientModInitializer {
         ));
 
         BlockEntityRendererFactories.register(ModBlocks.GRAND_DOOR_TYPE, GrandDoorRenderer::new);
+
+        LibyAssetRegistry ASSET_REGISTRY = LibyAssetRegistry.of(GrimoireMain.MOD_ID);
+
+        ASSET_REGISTRY.registerItemPredicateModel(ModItems.GRIMOIRE, new ModelIdentifier(GrimoireMain.id("grimoire_in_hand"), "inventory"), (mode, stack, leftHand) ->
+            switch(mode) {
+                case GUI, GROUND, FIXED -> false;
+                default -> true;
+            }
+        );
     }
 }
