@@ -24,5 +24,10 @@ public class ModSoundProvider extends LibySoundProvider {
 
         registerSound(ModSounds.OATHBREAKER_FIRE, null, false, LibySoundData.create("grimoire:oathbreaker/fire"));
         registerSound(ModSounds.OATHBREAKER_EXPLOSION, null, false, LibySoundData.create("grimoire:oathbreaker/explosion"));
+
+        registerSound(ModSounds.ENTITY_SOULMOULD_AMBIENT, null, false, LibySoundData.create("grimoire:soulmould/soulmould_ambient_1"), LibySoundData.create("grimoire:soulmould/soulmould_ambient_2"));
+        registerSound(ModSounds.ENTITY_SOULMOULD_ATTACK, null, false, LibySoundData.create("grimoire:soulmould/soulmould_attack_1"), LibySoundData.create("grimoire:soulmould/soulmould_attack_2"), LibySoundData.create("grimoire:soulmould/soulmould_attack_3"));
+        registerSound(ModSounds.ENTITY_SOULMOULD_DEATH, null, false, LibySoundData.create("grimoire:soulmould/soulmould_death_1"));
+        registerSound(ModSounds.ENTITY_SOULMOULD_HURT, null, false, LibySoundData.create("grimoire:soulmould/soulmould_damage_1"));
     }
 }

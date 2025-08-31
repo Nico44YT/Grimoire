@@ -1,0 +1,36 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Nico_44",
+	"textures": {
+		"0": "grimoire:block/item_display_block_bottom",
+		"particle": "grimoire:block/item_display_block_bottom"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 5.5],
+			"to": [14, 1, 10.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 5.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 12, 1], "texture": "#0"},
+				"east": {"uv": [0, 0, 5, 1], "texture": "#0"},
+				"south": {"uv": [0, 0, 12, 1], "texture": "#0"},
+				"west": {"uv": [0, 0, 5, 1], "texture": "#0"},
+				"up": {"uv": [1, 4, 13, 9], "texture": "#0"},
+				"down": {"uv": [1, 6, 13, 11], "texture": "#0"}
+			}
+		},
+		{
+			"from": [2.5, 1, 6],
+			"to": [13.5, 15, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 1, 6]},
+			"faces": {
+				"north": {"uv": [3, 1, 14, 15], "texture": "#0"},
+				"east": {"uv": [6, 1, 10, 15], "texture": "#0"},
+				"south": {"uv": [13, 15, 2, 1], "texture": "#0"},
+				"west": {"uv": [10, 1, 14, 15], "texture": "#0"},
+				"up": {"uv": [2, 4, 13, 8], "texture": "#0"},
+				"down": {"uv": [0, 0, 11, 4], "texture": "#0"}
+			}
+		}
+	]
+}

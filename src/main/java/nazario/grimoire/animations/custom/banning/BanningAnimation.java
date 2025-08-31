@@ -87,10 +87,6 @@ public class BanningAnimation extends LibyEntityAnimation<LivingEntity> {
             AAALevel.addParticle(world, 8000, playingBanishmentVfx);
         }
 
-        //if( && livingEntity != null && !livingEntity.getWorld().isClient()) {
-        //    livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 99999, 0, true, false));
-        //}
-
         if (this.getTicksPassed() > 20 * 37.5 && this.getTicksPassed() <= 20 * 40 && !world.isClient()) {
             // Gradual expansion
             explosionRadius++;

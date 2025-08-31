@@ -20,6 +20,12 @@ public class ModSounds {
     public static final SoundEvent OATHBREAKER_FIRE = REGISTRY.registerSoundEvent("item.grimoire.oathbreaker.fire");
     public static final SoundEvent OATHBREAKER_EXPLOSION = REGISTRY.registerSoundEvent("item.grimoire.oathbreaker.explosion", 64);
 
+    public static final SoundEvent ENTITY_SOULMOULD_ATTACK = REGISTRY.registerSoundEvent("entity.grimoire.avenging_soulmould.attack");
+    public static final SoundEvent ENTITY_SOULMOULD_HURT = REGISTRY.registerSoundEvent("entity.grimoire.avenging_soulmould.hurt");
+    public static final SoundEvent ENTITY_SOULMOULD_DEATH = REGISTRY.registerSoundEvent("entity.grimoire.avenging_soulmould.death");
+    public static final SoundEvent ENTITY_SOULMOULD_AMBIENT = REGISTRY.registerSoundEvent("entity.grimoire.avenging_soulmould.ambient") ;
+
+
     public static void register() {
 
     }

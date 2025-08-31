@@ -25,5 +25,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.VANISHED_BUCKET, Models.GENERATED);
         itemModelGenerator.register(ModItems.SKULL_KEY, Models.GENERATED);
         itemModelGenerator.register(ModItems.GRIMOIRE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.AVENGING_SOULMOULD, Models.GENERATED);
     }
 }
