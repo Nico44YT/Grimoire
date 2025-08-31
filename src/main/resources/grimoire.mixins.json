@@ -4,13 +4,11 @@
   "package": "nazario.grimoire.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "EntityMixin",
-    "ItemStackMixin"
+    "EntityMixin"
   ],
   "client": [
     "client.CreativeInventoryScreenMixin",
-    "client.PlayerEntityRendererMixin",
-    "client.TooltipBackgroundRendererMixin"
+    "client.PlayerEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
