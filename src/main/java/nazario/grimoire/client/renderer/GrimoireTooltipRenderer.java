@@ -5,7 +5,6 @@ import nazario.grimoire.GrimoireMain;
 import nazario.liby.api.assetgen.v1.client.LibyDrawContext;
 import nazario.liby.api.assetgen.v1.client.renderer.LibyTooltipRenderer;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.tooltip.TooltipBackgroundRenderer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 
@@ -29,11 +28,11 @@ public class GrimoireTooltipRenderer implements LibyTooltipRenderer {
         int endX = width + border * 2;
         int endY = height + border * 2;
 
-        TooltipBackgroundRenderer.renderHorizontalLine(context, startX, startY - 1, endX, z, BACKGROUND_COLOR);
-        TooltipBackgroundRenderer.renderHorizontalLine(context, startX, startY + endY, endX, z, BACKGROUND_COLOR);
-        TooltipBackgroundRenderer.renderVerticalLine(context, startX - 1, startY, endY, z, BACKGROUND_COLOR);
-        TooltipBackgroundRenderer.renderVerticalLine(context, startX + endX, startY, endY, z, BACKGROUND_COLOR);
-        TooltipBackgroundRenderer.renderBorder(context, startX, startY + 1, endX, endY, z, START_Y_BORDER_COLOR, END_Y_BORDER_COLOR);
+        this.renderHorizontalLine(itemStack, context, startX, startY - 1, endX, z, BACKGROUND_COLOR);
+        this.renderHorizontalLine(itemStack, context, startX, startY + endY, endX, z, BACKGROUND_COLOR);
+        this.renderVerticalLine(itemStack, context, startX - 1, startY, endY, z, BACKGROUND_COLOR);
+        this.renderVerticalLine(itemStack, context, startX + endX, startY, endY, z, BACKGROUND_COLOR);
+        this.renderBorder(itemStack, context, startX, startY + 1, endX, endY, z, START_Y_BORDER_COLOR, END_Y_BORDER_COLOR);
 
         time += MinecraftClient.getInstance().getLastFrameDuration() * 0.05f;
 
